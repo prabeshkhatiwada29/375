@@ -14,6 +14,16 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "bento/ubuntu-24.04"
 
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "2048"
+    vb.cpus = 2
+    vb.name = "ubuntu-24.04-vagrant"
+
+  end
+
+  config.vm.provision "shell", path: "setup.sh"
+
+
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
