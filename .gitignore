@@ -1,2 +1,7 @@
 
 .vagrant/
+setup.sh
+*.log
+*.swp
+.DS_Store
+node_modules/
